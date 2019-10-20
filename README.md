@@ -1,0 +1,1 @@
+# xboss_odoo
