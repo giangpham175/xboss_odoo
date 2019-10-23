@@ -13,6 +13,8 @@
                     Click to define a new product.
                 </p>
             </field>
-        </record>        
+        </record>
+        <menuitem id="menu_stock_inventory_control_by_categories" name="Category List" parent="stock.menu_stock_root" />
+        <menuitem id="product_template_action_product_categ_product" name="Products" action="product_template_action_product_category_product" parent="menu_stock_inventory_control_by_categories"/>
     </data>
 </odoo>
