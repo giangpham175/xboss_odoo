@@ -31,6 +31,7 @@
         'views/product_menu.xml',
         'views/asset_menu.xml',
         'views/charge_menu.xml',
+        'views/service_menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
