@@ -17,7 +17,10 @@ class PurchaseCategories(models.Model):
         elif self.categ_types == 'services':
             res['domain'] = {'product_id': [
                 ('purchase_ok', '=', True), '&', ('type', '=', 'service'), ('categ_service', '=', True)]}
-        else:
+        elif self.categ_types == 'assets':
             res['domain'] = {'product_id': [
-                ('purchase_ok', '=', True), '&', ('type', '=', 'service'), ('categ_assets', '=', True)]}
+                ('purchase_ok', '=', True), '&', ('type', '=', 'consu'), ('categ_assets', '=', True)]}
+        else:
+            res['domain'] = {'product_id': [('purchase_ok', '=', True), '&', ('type', '=', [
+                'product', 'consu']), ('categ_product', '=', True)]}
         return res
