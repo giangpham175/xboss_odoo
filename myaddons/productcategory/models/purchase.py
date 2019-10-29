@@ -5,8 +5,7 @@ class PurchaseCategories(models.Model):
     _name = "purchase.order.line"
     _inherit = "purchase.order.line"
 
-    categ_types = fields.Selection([('products', 'Products'), ('services', 'Services'), (
-        'assets', 'Assets'), ('charge', 'Charges')], 'Category', default='products')
+    categ_types = fields.Selection([('products', 'Products'), ('services', 'Services'), ('assets', 'Assets'), ('charge', 'Charges')], 'Category', default='products')
 
     @api.onchange('categ_types')
     def onchange_use_insurance(self):
@@ -21,6 +20,5 @@ class PurchaseCategories(models.Model):
             res['domain'] = {'product_id': [
                 ('purchase_ok', '=', True), '&', ('type', '=', 'consu'), ('categ_assets', '=', True)]}
         else:
-            res['domain'] = {'product_id': [('purchase_ok', '=', True), '&', ('type', '=', [
-                'product', 'consu']), ('categ_product', '=', True)]}
+            res['domain'] = {'product_id': [('purchase_ok', '=', True), '&', ('type', '=', ['product', 'consu']), ('categ_product', '=', True)]}
         return res
