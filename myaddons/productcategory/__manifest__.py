@@ -27,11 +27,13 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+
         'views/products.xml',
         'views/product_menu.xml',
         'views/asset_menu.xml',
         'views/charge_menu.xml',
         'views/service_menu.xml',
+        # 'views/purchase.xml',
         'views/sale.xml',
     ],
     # only loaded in demonstration mode
