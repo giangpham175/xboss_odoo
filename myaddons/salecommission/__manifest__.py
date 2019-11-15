@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'product', ],
+    'depends': ['base', 'product', 'sale_management', ],
 
     # always loaded
     'data': [
@@ -28,11 +28,23 @@
         'views/views.xml',
         'views/templates.xml',
 
+        'security/ir.model.access.csv',
+        'views/sale_commission_view.xml',
+        'views/sale_commission_mixin_views.xml',
         'views/product_template_view.xml',
-        'sale_commission_view.xml',
+        'views/res_partner_view.xml',
+        'views/sale_order_view.xml',
+        'views/account_invoice_view.xml',
+        'views/sale_commission_settlement_view.xml',
+        'views/sale_commission_settlement_report.xml',
+        'views/report_settlement_templates.xml',
+        'report/sale_commission_analysis_report_view.xml',
+        'wizard/wizard_settle.xml',
+        'wizard/wizard_invoice.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
+        'demo/sale_agent_demo.xml',
         'demo/demo.xml',
     ],
 }
